@@ -15,8 +15,13 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: Color(0xfff313358), items: [Icon(Icons.search)]),
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return SearchPage();
+            }));
+          },
+          child: Icon(Icons.search)),
       body: Stack(
         children: [
           Image.asset(
