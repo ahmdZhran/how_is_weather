@@ -15,7 +15,10 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.white,
+          // shape: ,
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
               return SearchPage();
