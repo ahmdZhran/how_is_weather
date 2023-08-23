@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/starts_in_sky.jfif'),
             fit: BoxFit.cover,
