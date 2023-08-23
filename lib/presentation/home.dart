@@ -17,11 +17,12 @@ class _HomeState extends State<Home> {
       bottomNavigationBar:
           CurvedNavigationBar(backgroundColor: Color(0xfff313358), items: [
         IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.search,
-              color: Color(0xfff313358),
-            ))
+          onPressed: () {},
+          icon: const Icon(
+            Icons.search,
+            color: Color(0xfff313358),
+          ),
+        ),
       ]),
       body: Stack(
         children: [
