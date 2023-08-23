@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:how_is_weather/presentation/search_page.dart';
 
 import '../widgets/custome_text.dart';
 
@@ -14,18 +15,8 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar:
-          CurvedNavigationBar(backgroundColor: Color(0xfff313358), items: [
-        IconButton(
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage(),))
-          },
-          icon: const Icon(
-            Icons.search,
-            color: Color(0xfff313358),
-          ),
-        ),
-      ]),
+      bottomNavigationBar: CurvedNavigationBar(
+          backgroundColor: Color(0xfff313358), items: [Icon(Icons.search)]),
       body: Stack(
         children: [
           Image.asset(
