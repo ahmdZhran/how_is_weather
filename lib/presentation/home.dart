@@ -17,7 +17,9 @@ class _HomeState extends State<Home> {
       bottomNavigationBar:
           CurvedNavigationBar(backgroundColor: Color(0xfff313358), items: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage(),))
+          },
           icon: const Icon(
             Icons.search,
             color: Color(0xfff313358),
