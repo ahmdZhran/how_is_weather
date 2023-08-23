@@ -25,7 +25,24 @@ class SearchPage extends StatelessWidget {
         ),
       ),
       body: Column(
-        children: [TextField()],
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: 'Search',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),
+                  borderSide: BorderSide(color: Colors.red, width: 1.0),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(24),
+                  borderSide: BorderSide(color: Colors.blue, width: 1.0),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
