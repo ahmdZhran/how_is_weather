@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/custome_text.dart';
@@ -13,6 +14,8 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: CurvedNavigationBar(
+          items: [IconButton(onPressed: () {}, icon: Icon(Icons.search))]),
       body: Stack(
         children: [
           Image.asset(
