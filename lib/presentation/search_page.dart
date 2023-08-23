@@ -6,10 +6,11 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff34425b),
+      backgroundColor: const Color(0xff34425b),
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 14),
+        backgroundColor: const Color(0xff34425b),
+        leading: const Padding(
+          padding: EdgeInsets.only(left: 14),
           child: Icon(
             Icons.arrow_back_ios,
             size: 28,
@@ -17,12 +18,11 @@ class SearchPage extends StatelessWidget {
         ),
         elevation: 0,
         titleSpacing: 0,
-        title: Text(
+        title: const Text(
           'Weather',
           style: TextStyle(
               color: Colors.white, fontFamily: 'Tajawal', fontSize: 26),
         ),
-        backgroundColor: Color(0xff34425b),
       ),
     );
   }
