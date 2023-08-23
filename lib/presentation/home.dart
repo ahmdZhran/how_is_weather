@@ -24,7 +24,7 @@ class Home extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 40,
-                      // fontFamily: 'Tajawal',
+                      fontFamily: 'Tajawal',
                     ),
                   ),
                 )
