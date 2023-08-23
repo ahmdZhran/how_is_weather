@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+import '../widgets/custome_text.dart';
+
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,14 +26,22 @@ class Home extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 100),
-                  child: Text(
-                    '19C',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 40,
-                      fontFamily: 'Tajawal',
-                    ),
+                  child: CustomText(
+                    text: 'Alexandria',
+                    fontSize: 40,
                   ),
+                ),
+                CustomText(
+                  text: '19C°',
+                  fontSize: 70,
+                ),
+                CustomText(text: 'Mostly Clear', fontSize: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CustomText(text: 'H:24°', fontSize: 20),
+                    CustomText(text: 'L:18°', fontSize: 20)
+                  ],
                 )
               ],
             ),
