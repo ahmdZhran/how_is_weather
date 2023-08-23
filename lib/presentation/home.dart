@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -24,6 +25,7 @@ class Home extends StatelessWidget {
               'Your Content Here',
               style: TextStyle(fontSize: 24, color: Colors.white),
             ),
+            SvgPicture.asset('assetName')
           ],
         ),
       ),
