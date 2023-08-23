@@ -8,15 +8,19 @@ class SearchPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xff34425b),
       appBar: AppBar(
-        leading: Icon(
-          Icons.arrow_back_ios,
-          size: 28,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 14),
+          child: Icon(
+            Icons.arrow_back_ios,
+            size: 28,
+          ),
         ),
         elevation: 0,
+        titleSpacing: 0,
         title: Text(
           'Weather',
           style: TextStyle(
-              color: Colors.white, fontFamily: 'Tajawal', fontSize: 28),
+              color: Colors.white, fontFamily: 'Tajawal', fontSize: 26),
         ),
         backgroundColor: Color(0xff34425b),
       ),
