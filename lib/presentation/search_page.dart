@@ -39,6 +39,7 @@ class SearchPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(24),
                   borderSide: BorderSide(color: Colors.blue, width: 1.0),
                 ),
+                prefixIcon: Icon(Icons.search),
               ),
             ),
           ),
