@@ -21,7 +21,11 @@ class Home extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 100),
                   child: Text(
                     '19C',
-                    style: TextStyle(color: Colors.white, fontSize: 40),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 40,
+                      // fontFamily: 'Tajawal',
+                    ),
                   ),
                 )
               ],
