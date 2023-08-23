@@ -21,7 +21,7 @@ class _HomeState extends State<Home> {
               return SearchPage();
             }));
           },
-          child: Icon(Icons.search)),
+          child: const Icon(Icons.search)),
       body: Stack(
         children: [
           Image.asset(
