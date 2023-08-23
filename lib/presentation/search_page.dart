@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
+import '../utls/constants.dart';
+
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff34425b),
+      backgroundColor: Color.fromARGB(255, 40, 59, 95),
       appBar: AppBar(
-        backgroundColor: const Color(0xff34425b),
+        backgroundColor: Color.fromARGB(255, 40, 59, 95),
         leading: const Padding(
           padding: EdgeInsets.only(left: 14),
           child: Icon(
@@ -30,17 +32,24 @@ class SearchPage extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             child: TextField(
               decoration: InputDecoration(
-                hintText: 'Search',
+                hintText: 'Search for a city',
+                hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
+                filled: true,
+                fillColor: Color.fromARGB(255, 31, 49, 83),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
                   borderSide: BorderSide(color: Colors.red, width: 1.0),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(24),
-                  borderSide: BorderSide(color: Colors.blue, width: 1.0),
+                  borderSide: BorderSide(color: myCustomColor, width: 1.0),
                 ),
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: Colors.white.withOpacity(0.5),
+                ),
               ),
+              onSubmitted: (value) {},
             ),
           ),
         ],

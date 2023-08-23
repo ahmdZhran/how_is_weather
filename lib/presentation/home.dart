@@ -30,7 +30,10 @@ class _HomeState extends State<Home> {
               ),
             );
           },
-          child: const Icon(Icons.search)),
+          child: const Icon(
+            Icons.search,
+            color: Colors.black,
+          )),
       body: Stack(
         children: [
           Image.asset(
@@ -47,18 +50,32 @@ class _HomeState extends State<Home> {
                   child: CustomText(
                     text: 'Alexandria',
                     fontSize: 40,
+                    color: Colors.white,
                   ),
                 ),
                 CustomText(
                   text: '19C°',
                   fontSize: 70,
+                  color: Colors.white,
                 ),
-                CustomText(text: 'Mostly Clear', fontSize: 20),
+                CustomText(
+                  text: 'Mostly Clear',
+                  fontSize: 20,
+                  color: Colors.white.withOpacity(0.8),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    CustomText(text: 'H:24°', fontSize: 20),
-                    CustomText(text: 'L:18°', fontSize: 20)
+                    CustomText(
+                      text: 'H:24°',
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                    CustomText(
+                      text: 'L:18°',
+                      fontSize: 20,
+                      color: Colors.white,
+                    )
                   ],
                 )
               ],
