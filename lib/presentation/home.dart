@@ -14,8 +14,15 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: CurvedNavigationBar(
-          items: [IconButton(onPressed: () {}, icon: Icon(Icons.search))]),
+      bottomNavigationBar:
+          CurvedNavigationBar(backgroundColor: Color(0xfff313358), items: [
+        IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.search,
+              color: Color(0xfff313358),
+            ))
+      ]),
       body: Stack(
         children: [
           Image.asset(
