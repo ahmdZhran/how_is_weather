@@ -19,10 +19,10 @@ class _HomeState extends State<Home> {
           FloatingActionButtonLocation.miniCenterFloat,
       floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.white,
-          shape: CircleBorder(),
+          shape: const CircleBorder(),
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return SearchPage();
+              return const SearchPage();
             }));
           },
           child: const Icon(Icons.search)),
