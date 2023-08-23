@@ -7,6 +7,13 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff34425b),
+      appBar: AppBar(
+        title: Text(
+          'weather app',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Color(0xff34425b),
+      ),
     );
   }
 }

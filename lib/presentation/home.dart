@@ -21,9 +21,14 @@ class _HomeState extends State<Home> {
           backgroundColor: Colors.white,
           shape: const CircleBorder(),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return const SearchPage();
-            }));
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return const SearchPage();
+                },
+              ),
+            );
           },
           child: const Icon(Icons.search)),
       body: Stack(
