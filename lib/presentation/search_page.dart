@@ -24,6 +24,9 @@ class SearchPage extends StatelessWidget {
               color: Colors.white, fontFamily: 'Tajawal', fontSize: 26),
         ),
       ),
+      body: Column(
+        children: [TextField()],
+      ),
     );
   }
 }
