@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -7,27 +6,21 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/starts_in_sky.jfif'),
+      body: Stack(
+        children: [
+          Image.asset(
+            'assets/stars_in_sky.jfif',
             fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
           ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SizedBox(height: 100),
-            Text(
+          Center(
+            child: Text(
               'Your Content Here',
               style: TextStyle(fontSize: 24, color: Colors.white),
             ),
-            SvgPicture.asset('assetName')
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
