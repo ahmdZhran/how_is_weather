@@ -15,11 +15,18 @@ class Home extends StatelessWidget {
             height: double.infinity,
           ),
           Center(
-            child: Text(
-              'Your Content Here',
-              style: TextStyle(fontSize: 24, color: Colors.white),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 100),
+                  child: Text(
+                    '19C',
+                    style: TextStyle(color: Colors.white, fontSize: 40),
+                  ),
+                )
+              ],
             ),
-          ),
+          )
         ],
       ),
     );
