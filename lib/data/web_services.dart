@@ -5,9 +5,9 @@ import '../utls/constants.dart';
 class ApiService {
   ApiService._instance();
   static final ApiService service = ApiService._instance();
-  fetchData(String cityName) {
+  Future<http.Response> fetchData(String cityName) async {
     String url =
         '$baseUrl/forecast.json?key=$apiKey&q=$cityName&days=1&aqi=no&alerts=no';
-    http.get(Uri.parse(url));
+    await http.get(Uri.parse(url));
   }
 }
