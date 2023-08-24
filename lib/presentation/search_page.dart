@@ -11,11 +11,13 @@ class SearchPage extends StatelessWidget {
       backgroundColor: Color.fromARGB(255, 40, 59, 95),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 40, 59, 95),
-        leading: const Padding(
+        leading: Padding(
           padding: EdgeInsets.only(left: 14),
-          child: Icon(
-            Icons.arrow_back_ios,
-            size: 28,
+          child: IconButton(
+            icon: Icon(Icons.arrow_back_ios_new),
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
         ),
         elevation: 0,
