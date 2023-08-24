@@ -8,6 +8,12 @@ class ApiService {
   Future<http.Response> fetchData(String cityName) async {
     String url =
         '$baseUrl/forecast.json?key=$apiKey&q=$cityName&days=1&aqi=no&alerts=no';
-    await http.get(Uri.parse(url));
+
+    http.Response response = await http.get(Uri.parse(url));
+    if (response.statusCode == 200) {
+      return response;
+    } else {
+      throw Exception('Unable to fetch data');
+    }
   }
 }
