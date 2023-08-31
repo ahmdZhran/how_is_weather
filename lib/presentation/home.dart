@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:how_is_weather/models/weather_response.dart';
 import 'package:how_is_weather/presentation/search_page.dart';
 
 import '../widgets/custome_text.dart';
@@ -12,6 +13,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  WeatherResponse? weatherData;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
