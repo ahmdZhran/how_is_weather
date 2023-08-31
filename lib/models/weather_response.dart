@@ -1,6 +1,6 @@
 class WeatherResponse {
   Location? location;
-
+  Current? current;
   WeatherResponse({this.location});
 
   WeatherResponse.fromJson(Map<String, dynamic> json) {
