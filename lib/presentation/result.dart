@@ -101,6 +101,8 @@ class ResultPage extends StatelessWidget {
                     )
                   ],
                 );
+              } else if (snapshot.hasError) {
+                return Text(snapshot.error!.toString());
               }
             },
           )
