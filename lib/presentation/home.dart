@@ -49,7 +49,8 @@ class _HomeState extends State<Home> {
                   AnimatedTextKit(
                     animatedTexts: [
                       TypewriterAnimatedText('Know How is the weather',
-                          textStyle: TextStyle(color: Colors.white))
+                          textStyle: TextStyle(color: Colors.white),
+                          speed: Duration(microseconds: 1000))
                     ],
                     onTap: () {
                       print("Top Event");
