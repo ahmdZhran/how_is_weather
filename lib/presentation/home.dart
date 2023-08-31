@@ -13,7 +13,6 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    String cityName;
     return Scaffold(
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterFloat,
@@ -25,7 +24,7 @@ class _HomeState extends State<Home> {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return const SearchPage();
+                  return SearchPage();
                 },
               ),
             );
