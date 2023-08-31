@@ -42,22 +42,33 @@ class _HomeState extends State<Home> {
             width: double.infinity,
             height: double.infinity,
           ),
-          Center(
-            child: SafeArea(
-              child: Column(
-                children: [
-                  AnimatedTextKit(
+          SafeArea(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 15, top: 15, right: 1),
+                  child: AnimatedTextKit(
                     animatedTexts: [
-                      TypewriterAnimatedText('Know How is the weather',
-                          textStyle: TextStyle(color: Colors.white),
-                          speed: Duration(microseconds: 1000))
+                      TypewriterAnimatedText('Know how is the weather',
+                          textStyle: TextStyle(
+                              color: Colors.white,
+                              fontSize: 30,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Tajawal'),
+                          speed: Duration(milliseconds: 100)),
+                      TyperAnimatedText(
+                          'Start the search by pressing on the search icon below...',
+                          textStyle: TextStyle(
+                              color: Colors.white,
+                              fontSize: 27,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: 'Tajawal'),
+                          speed: Duration(milliseconds: 100))
                     ],
-                    onTap: () {
-                      print("Top Event");
-                    },
-                  )
-                ],
-              ),
+                  ),
+                )
+              ],
             ),
           )
         ],
