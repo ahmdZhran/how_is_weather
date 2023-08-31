@@ -36,6 +36,7 @@ class SearchPage extends StatelessWidget {
             child: TextField(
               cursorColor: Colors.white,
               autocorrect: true,
+              style: TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 hintText: 'Search for a city',
                 hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
