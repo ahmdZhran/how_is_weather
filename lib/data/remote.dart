@@ -14,10 +14,9 @@ class ApiService {
 
     http.Response response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
-      print('API Response Body: ${response.body}');
       String body = response.body;
       var jsonResponse = jsonDecode(body);
-
+      print('API Response Body: ${response.body}');
       return WeatherResponse.fromJson(jsonResponse);
     } else {
       throw Exception('Unable to fetch data');
