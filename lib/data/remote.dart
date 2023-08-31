@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:how_is_weather/models/weather_response.dart';
 import 'package:http/http.dart' as http;
 
@@ -14,6 +16,7 @@ class ApiService {
     if (response.statusCode == 200) {
       print('API Response Body: ${response.body}');
       String body = response.body;
+      var jsonResponse = jsonDecode(body);
 
       return response;
     } else {
