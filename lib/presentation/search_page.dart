@@ -51,7 +51,9 @@ class SearchPage extends StatelessWidget {
                   color: Colors.white.withOpacity(0.5),
                 ),
               ),
-              onSubmitted: (data) {},
+              onSubmitted: (data) {
+                cityName = data;
+              },
             ),
           ),
         ],
