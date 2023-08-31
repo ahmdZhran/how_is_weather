@@ -21,4 +21,6 @@ class Location {
   }
 }
 
-class Current {}
+class Current {
+  int? tempC;
+}
