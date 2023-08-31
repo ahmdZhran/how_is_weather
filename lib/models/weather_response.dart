@@ -1,12 +1,14 @@
 class WeatherResponse {
   Location? location;
   Current? current;
-  WeatherResponse({this.location});
+  WeatherResponse({this.location, this.current});
 
   WeatherResponse.fromJson(Map<String, dynamic> json) {
     location = json['location'] != null
         ? new Location.fromJson(json['location'])
         : null;
+    current =
+        json['current'] != null ? new Current.fromJson(json['current']) : null;
   }
 }
 
@@ -24,5 +26,11 @@ class Location {
 class Current {
   int? tempC;
   Condition? condition;
-  Current({this.tempC, this.condition})
+  Current({this.tempC, this.condition});
+  Current.fromJson(Map<String, dynamic> json) {
+    tempC = json['temp_c'];
+    condition = json['condition'] != null
+        ? new Condition.fromJson(json['condition'])
+        : null;
+  }
 }
