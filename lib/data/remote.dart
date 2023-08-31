@@ -18,7 +18,7 @@ class ApiService {
       String body = response.body;
       var jsonResponse = jsonDecode(body);
 
-      return response;
+      return WeatherResponse.fromJson(jsonResponse);
     } else {
       throw Exception('Unable to fetch data');
     }
