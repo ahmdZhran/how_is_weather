@@ -25,7 +25,7 @@ class Location {
 }
 
 class Current {
-  int? tempC;
+  double? tempC;
   int? humidity;
   Condition? condition;
   Current({this.tempC, this.condition, this.humidity});
