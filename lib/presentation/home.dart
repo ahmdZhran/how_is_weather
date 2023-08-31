@@ -51,20 +51,20 @@ class _HomeState extends State<Home> {
                   child: AnimatedTextKit(
                     animatedTexts: [
                       TypewriterAnimatedText('Know how is the weather',
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                               color: Colors.white,
                               fontSize: 30,
                               fontWeight: FontWeight.w700,
                               fontFamily: 'Tajawal'),
-                          speed: Duration(milliseconds: 100)),
+                          speed: const Duration(milliseconds: 100)),
                       TyperAnimatedText(
                           'Start the search by pressing on the search icon below...',
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                               color: Colors.white,
                               fontSize: 27,
                               fontWeight: FontWeight.w700,
                               fontFamily: 'Tajawal'),
-                          speed: Duration(milliseconds: 100))
+                          speed: const Duration(milliseconds: 100))
                     ],
                   ),
                 )

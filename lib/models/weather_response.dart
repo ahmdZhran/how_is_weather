@@ -15,6 +15,7 @@ class WeatherResponse {
 class Location {
   String? name;
   double? lat;
+
   Location({this.name, this.lat});
 
   Location.fromJson(Map<String, dynamic> json) {
@@ -25,10 +26,12 @@ class Location {
 
 class Current {
   int? tempC;
+  int? humidity;
   Condition? condition;
-  Current({this.tempC, this.condition});
+  Current({this.tempC, this.condition, this.humidity});
   Current.fromJson(Map<String, dynamic> json) {
     tempC = json['temp_c'];
+    humidity = json['humidity'];
     condition = json['condition'] != null
         ? new Condition.fromJson(json['condition'])
         : null;
