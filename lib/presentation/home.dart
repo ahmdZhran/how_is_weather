@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:how_is_weather/presentation/search_page.dart';
 
@@ -44,7 +45,7 @@ class _HomeState extends State<Home> {
           Center(
             child: SafeArea(
               child: Column(
-                children: [],
+                children: [AnimatedTextKit(animatedTexts: [])],
               ),
             ),
           )
