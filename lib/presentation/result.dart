@@ -68,7 +68,7 @@ class ResultPage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 100),
                       child: CustomText(
-                        text: 'Alexandria',
+                        text: weatherData.location?.name ?? 'Unknown',
                         fontSize: 40,
                         color: Colors.white,
                       ),
