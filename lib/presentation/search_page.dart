@@ -34,6 +34,8 @@ class SearchPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(20),
             child: TextField(
+              cursorColor: Colors.white,
+              autocorrect: true,
               decoration: InputDecoration(
                 hintText: 'Search for a city',
                 hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
