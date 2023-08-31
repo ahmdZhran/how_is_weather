@@ -45,6 +45,7 @@ class ResultPage extends StatelessWidget {
                       fontSize: 20,
                       color: Colors.white,
                     ),
+                    SizedBox(width: 10),
                     CustomText(
                       text: 'L:18°',
                       fontSize: 20,

@@ -37,7 +37,7 @@ class _HomeState extends State<Home> {
             Icons.search,
             color: Colors.black,
           )),
-      body: weatherData == null
+      body: weatherData != null
           ? Stack(
               children: [
                 Image.asset(
