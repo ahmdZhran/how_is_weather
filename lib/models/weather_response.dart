@@ -10,4 +10,13 @@ class WeatherResponse {
   }
 }
 
-class Location {}
+class Location {
+  String? name;
+  double? lat;
+  Location({this.name, this.lat});
+
+  Location.fromJson(Map<String, dynamic> json) {
+    name = json['name'];
+    lat = json['lat'];
+  }
+}
