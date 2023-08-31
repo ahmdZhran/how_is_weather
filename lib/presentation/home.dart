@@ -44,14 +44,7 @@ class _HomeState extends State<Home> {
           Center(
             child: SafeArea(
               child: Column(
-                children: [
-                  Text(
-                    'Know Your weather',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  Text('press on search Icon in below',
-                      style: TextStyle(color: Colors.white)),
-                ],
+                children: [],
               ),
             ),
           )
