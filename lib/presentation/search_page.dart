@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:how_is_weather/data/remote.dart';
 
 import '../utls/constants.dart';
 
@@ -51,7 +52,7 @@ class SearchPage extends StatelessWidget {
                   color: Colors.white.withOpacity(0.5),
                 ),
               ),
-              onSubmitted: (value) {},
+              onSubmitted: (data) {},
             ),
           ),
         ],
