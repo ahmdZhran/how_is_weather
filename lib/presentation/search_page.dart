@@ -4,8 +4,7 @@ import 'package:how_is_weather/data/remote.dart';
 import '../utls/constants.dart';
 
 class SearchPage extends StatelessWidget {
-  const SearchPage({super.key});
-
+  String? cityName;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
