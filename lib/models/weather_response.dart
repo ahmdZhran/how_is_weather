@@ -20,3 +20,5 @@ class Location {
     lat = json['lat'];
   }
 }
+
+class Current {}
