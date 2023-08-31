@@ -62,7 +62,7 @@ class ResultPage extends StatelessWidget {
             future: ApiService.service.fetchData(cityName!),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                WeatherResponse weatherResponse = snapshot.data!;
+                WeatherResponse weatherData = snapshot.data!;
                 return Column(
                   children: [
                     Padding(
