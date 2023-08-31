@@ -17,7 +17,7 @@ class ResultPage extends StatelessWidget {
             width: double.infinity,
             height: double.infinity,
           ),
-          Center(
+          const Center(
               // child: Column(
               //   children: [
               //     Padding(
