@@ -45,7 +45,17 @@ class _HomeState extends State<Home> {
           Center(
             child: SafeArea(
               child: Column(
-                children: [AnimatedTextKit(animatedTexts: [])],
+                children: [
+                  AnimatedTextKit(
+                    animatedTexts: [
+                      TypewriterAnimatedText('Know How is the weather',
+                          textStyle: TextStyle(color: Colors.white))
+                    ],
+                    onTap: () {
+                      print("Top Event");
+                    },
+                  )
+                ],
               ),
             ),
           )
