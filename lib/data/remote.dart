@@ -11,7 +11,8 @@ class ApiService {
 
     http.Response response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
-      print(response.body);
+      print('API Response Body: ${response.body}');
+
       return response;
     } else {
       throw Exception('Unable to fetch data');
