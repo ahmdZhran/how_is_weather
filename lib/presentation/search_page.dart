@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:how_is_weather/data/remote.dart';
 import 'package:how_is_weather/models/weather_response.dart';
+import 'package:how_is_weather/presentation/result.dart';
 
 import '../utls/constants.dart';
 
@@ -58,6 +59,9 @@ class SearchPage extends StatelessWidget {
               onSubmitted: (data) {
                 cityName = data;
                 ApiService.service.fetchData(cityName!);
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return ResultPage();
+                }));
               },
             ),
           ),
