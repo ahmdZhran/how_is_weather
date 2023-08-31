@@ -24,4 +24,5 @@ class Location {
 class Current {
   int? tempC;
   Condition? condition;
+  Current({this.tempC, this.condition})
 }
