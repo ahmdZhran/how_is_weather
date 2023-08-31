@@ -13,6 +13,7 @@ class ApiService {
     http.Response response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
       print('API Response Body: ${response.body}');
+      String body = response.body;
 
       return response;
     } else {
