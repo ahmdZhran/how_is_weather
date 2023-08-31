@@ -14,7 +14,7 @@ class SearchPage extends StatelessWidget {
         leading: Padding(
           padding: EdgeInsets.only(left: 14),
           child: IconButton(
-            icon: Icon(Icons.arrow_back_ios_new),
+            icon: Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.pop(context);
             },
