@@ -59,53 +59,54 @@ class ResultPage extends StatelessWidget {
 
               ),
           FutureBuilder(
-            future: ApiService.service.fetchData(cityName!),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                WeatherResponse weatherData = snapshot.data!;
-                return Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 100),
-                      child: CustomText(
-                        text: weatherData.location?.name ?? 'Unknown',
-                        fontSize: 40,
-                        color: Colors.white,
-                      ),
-                    ),
-                    CustomText(
-                      text: '19C°',
-                      fontSize: 70,
-                      color: Colors.white,
-                    ),
-                    CustomText(
-                      text: 'Mostly Clear',
-                      fontSize: 20,
-                      color: Colors.white.withOpacity(0.8),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CustomText(
-                          text: 'H:24°',
-                          fontSize: 20,
+              future: ApiService.service.fetchData(cityName!),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  WeatherResponse weatherData = snapshot.data!;
+                  return Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 100),
+                        child: CustomText(
+                          text: weatherData.location?.name ?? 'Unknown',
+                          fontSize: 40,
                           color: Colors.white,
                         ),
-                        SizedBox(width: 10),
-                        CustomText(
-                          text: 'L:18°',
-                          fontSize: 20,
-                          color: Colors.white,
-                        )
-                      ],
-                    )
-                  ],
-                );
-              } else if (snapshot.hasError) {
-                return Text(snapshot.error!.toString());
-              }
-            },
-          )
+                      ),
+                      CustomText(
+                        text: '19C°',
+                        fontSize: 70,
+                        color: Colors.white,
+                      ),
+                      CustomText(
+                        text: 'Mostly Clear',
+                        fontSize: 20,
+                        color: Colors.white.withOpacity(0.8),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CustomText(
+                            text: 'H:24°',
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                          SizedBox(width: 10),
+                          CustomText(
+                            text: 'L:18°',
+                            fontSize: 20,
+                            color: Colors.white,
+                          )
+                        ],
+                      )
+                    ],
+                  );
+                } else if (snapshot.hasError) {
+                  return Text(snapshot.error!.toString());
+                } else {
+                  return CircularProgressIndicator();
+                }
+              })
         ],
       ),
     );
