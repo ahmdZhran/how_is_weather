@@ -23,4 +23,5 @@ class Location {
 
 class Current {
   int? tempC;
+  Condition? condition;
 }
