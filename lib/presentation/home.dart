@@ -43,7 +43,10 @@ class _HomeState extends State<Home> {
           ),
           Center(
             child: Column(
-              children: [],
+              children: [
+                Text('Know Your weather'),
+                Text('press on search Icon in below'),
+              ],
             ),
           )
         ],
