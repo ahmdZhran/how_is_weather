@@ -55,7 +55,7 @@ class ResultPage extends StatelessWidget {
                             fontSize: 20,
                             color: Colors.white,
                           ),
-                          SizedBox(width: 10),
+                          const SizedBox(width: 10),
                           CustomText(
                             text:
                                 'L:${weatherData.location!.lat?.toStringAsFixed(0)}°',
