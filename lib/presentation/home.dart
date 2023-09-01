@@ -1,9 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:how_is_weather/models/weather_response.dart';
-import 'package:how_is_weather/presentation/result.dart';
+
 import 'package:how_is_weather/presentation/search_page.dart';
 
+import '../data/remote.dart';
 import '../widgets/custome_text.dart';
 
 class Home extends StatefulWidget {
@@ -14,6 +15,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  String? cityName;
+  void updateUI() {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +39,7 @@ class _HomeState extends State<Home> {
             Icons.search,
             color: Colors.black,
           )),
-      body: weatherData != null
+      body: weatherData == null
           ? Stack(
               children: [
                 Image.asset(
@@ -77,7 +80,76 @@ class _HomeState extends State<Home> {
                 )
               ],
             )
-          : ResultPage(),
+          : Stack(
+              children: [
+                Image.asset(
+                  'assets/stars_in_sky.jfif',
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                  height: double.infinity,
+                ),
+                FutureBuilder(
+                  future: cityName != null
+                      ? ApiService.service.fetchData(cityName: cityName!)
+                      : null,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      WeatherResponse weatherData = snapshot.data!;
+                      return Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 100),
+                            child: CustomText(
+                              text: weatherData.location?.name ?? 'Unknown',
+                              fontSize: 40,
+                              color: Colors.white,
+                            ),
+                          ),
+                          CustomText(
+                            text:
+                                '${weatherData.current!.tempC?.toStringAsFixed(0)}C°',
+                            fontSize: 70,
+                            color: Colors.white,
+                          ),
+                          CustomText(
+                            text:
+                                weatherData.current!.condition!.text.toString(),
+                            fontSize: 20,
+                            color: Colors.white.withOpacity(0.8),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CustomText(
+                                text:
+                                    'H:${weatherData.current!.humidity.toString()}°',
+                                fontSize: 20,
+                                color: Colors.white,
+                              ),
+                              const SizedBox(width: 10),
+                              CustomText(
+                                text:
+                                    'L:${weatherData.location!.lat?.toStringAsFixed(0)}°',
+                                fontSize: 20,
+                                color: Colors.white,
+                              )
+                            ],
+                          )
+                        ],
+                      );
+                    } else if (snapshot.hasError) {
+                      return Text(snapshot.error!.toString());
+                    } else {
+                      return const Center(
+                        child: CircularProgressIndicator(
+                          color: Colors.white,
+                        ),
+                      );
+                    }
+                  },
+                )
+              ],
+            ),
     );
   }
 }
