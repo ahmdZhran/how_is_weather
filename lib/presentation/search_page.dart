@@ -59,7 +59,10 @@ class SearchPage extends StatelessWidget {
               onSubmitted: (data) {
                 cityName = data;
                 ApiService.service.fetchData(cityName!);
-                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultPage(cityName: cityName)));
               },
             ),
           ),
