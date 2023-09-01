@@ -66,6 +66,7 @@ class SearchPage extends StatelessWidget {
                 WeatherResponse weather =
                     await ApiService.service.fetchData(cityName: cityName!);
                 weatherData = weather;
+                updateUI!();
                 Navigator.pop(context, cityName);
               },
             ),
