@@ -5,8 +5,14 @@ import 'package:how_is_weather/presentation/result.dart';
 
 import '../utls/constants.dart';
 
-class SearchPage extends StatelessWidget {
+class SearchPage extends StatefulWidget {
+  @override
+  State<SearchPage> createState() => _SearchPageState();
+}
+
+class _SearchPageState extends State<SearchPage> {
   String? cityName;
+  VoidCallback? updateUI;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,9 +66,9 @@ class SearchPage extends StatelessWidget {
                 cityName = data;
 
                 WeatherResponse weather =
-                    await ApiService.service.fetchData(cityName!);
+                    await ApiService.service.fetchData(cityName: cityName!);
                 weatherData = weather;
-                Navigator.pop(context);
+                Navigator.pop(context, cityName);
               },
             ),
           ),
