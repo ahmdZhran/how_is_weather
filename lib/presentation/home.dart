@@ -30,7 +30,9 @@ class _HomeState extends State<Home> {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return SearchPage();
+                  return SearchPage(
+                    updateUI: updateUI,
+                  );
                 },
               ),
             );
