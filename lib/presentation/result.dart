@@ -77,7 +77,7 @@ class ResultPage extends StatelessWidget {
                         ),
                       ),
                       CustomText(
-                        text: '19C°',
+                        text: weatherData.current!.tempC.toString(),
                         fontSize: 70,
                         color: Colors.white,
                       ),
