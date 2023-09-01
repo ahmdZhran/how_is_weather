@@ -5,7 +5,8 @@ import 'package:how_is_weather/models/weather_response.dart';
 import '../widgets/custome_text.dart';
 
 class ResultPage extends StatelessWidget {
-  String? cityName;
+  final String? cityName;
+  ResultPage({this.cityName});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +60,9 @@ class ResultPage extends StatelessWidget {
 
               ),
           FutureBuilder(
-              future: ApiService.service.fetchData(cityName!),
+              future: cityName == null
+                  ? ApiService.service.fetchData('Cairo')
+                  : null,
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   WeatherResponse weatherData = snapshot.data!;
@@ -104,7 +107,7 @@ class ResultPage extends StatelessWidget {
                 } else if (snapshot.hasError) {
                   return Text(snapshot.error!.toString());
                 } else {
-                  return CircularProgressIndicator();
+                  return Center(child: CircularProgressIndicator());
                 }
               })
         ],
