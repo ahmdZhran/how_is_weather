@@ -19,7 +19,7 @@ class ResultPage extends StatelessWidget {
             height: double.infinity,
           ),
           FutureBuilder(
-              future: ApiService.service.fetchData(cityName!),
+              future: ApiService.service.fetchData('cairo'),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   WeatherResponse weatherData = snapshot.data!;

@@ -58,9 +58,11 @@ class SearchPage extends StatelessWidget {
               ),
               onSubmitted: (data) async {
                 cityName = data;
-                WeatherResponse weatherData =
+
+                WeatherResponse weather =
                     await ApiService.service.fetchData(cityName!);
-                Navigator.pop(context, weatherData);
+                weatherData = weather;
+                Navigator.pop(context);
               },
             ),
           ),
@@ -69,3 +71,5 @@ class SearchPage extends StatelessWidget {
     );
   }
 }
+
+WeatherResponse? weatherData;

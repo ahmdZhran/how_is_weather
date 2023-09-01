@@ -14,7 +14,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  WeatherResponse? weatherData;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
