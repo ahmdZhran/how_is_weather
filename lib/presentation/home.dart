@@ -16,7 +16,10 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   String? cityName;
-  void updateUI() {}
+  void updateUI() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
