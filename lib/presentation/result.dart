@@ -83,7 +83,7 @@ class ResultPage extends StatelessWidget {
                         color: Colors.white,
                       ),
                       CustomText(
-                        text: 'Mostly Clear',
+                        text: weatherData.current!.condition!.text.toString(),
                         fontSize: 20,
                         color: Colors.white.withOpacity(0.8),
                       ),
