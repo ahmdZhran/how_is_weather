@@ -18,50 +18,9 @@ class ResultPage extends StatelessWidget {
             width: double.infinity,
             height: double.infinity,
           ),
-          const Center(
-              // child: Column(
-              //   children: [
-              //     Padding(
-              //       padding: const EdgeInsets.only(top: 100),
-              //       child: CustomText(
-              //         text: 'Alexandria',
-              //         fontSize: 40,
-              //         color: Colors.white,
-              //       ),
-              //     ),
-              //     CustomText(
-              //       text: '19C°',
-              //       fontSize: 70,
-              //       color: Colors.white,
-              //     ),
-              //     CustomText(
-              //       text: 'Mostly Clear',
-              //       fontSize: 20,
-              //       color: Colors.white.withOpacity(0.8),
-              //     ),
-              //     Row(
-              //       mainAxisAlignment: MainAxisAlignment.center,
-              //       children: [
-              //         CustomText(
-              //           text: 'H:24°',
-              //           fontSize: 20,
-              //           color: Colors.white,
-              //         ),
-              //         SizedBox(width: 10),
-              //         CustomText(
-              //           text: 'L:18°',
-              //           fontSize: 20,
-              //           color: Colors.white,
-              //         )
-              //       ],
-              //     )
-              //   ],
-              // ),
-
-              ),
           FutureBuilder(
               future: cityName == null
-                  ? ApiService.service.fetchData('Cairo')
+                  ? ApiService.service.fetchData('Sweden')
                   : null,
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
@@ -91,13 +50,15 @@ class ResultPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           CustomText(
-                            text: 'H:24°',
+                            text:
+                                'H:${weatherData.current!.humidity.toString()}°',
                             fontSize: 20,
                             color: Colors.white,
                           ),
                           SizedBox(width: 10),
                           CustomText(
-                            text: 'L:18°',
+                            text:
+                                'L:${weatherData.location!.lat?.toStringAsFixed(0)}°',
                             fontSize: 20,
                             color: Colors.white,
                           )
@@ -108,7 +69,10 @@ class ResultPage extends StatelessWidget {
                 } else if (snapshot.hasError) {
                   return Text(snapshot.error!.toString());
                 } else {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(
+                      child: CircularProgressIndicator(
+                    color: Colors.white,
+                  ));
                 }
               })
         ],
