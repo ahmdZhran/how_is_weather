@@ -56,13 +56,11 @@ class SearchPage extends StatelessWidget {
                   color: Colors.white.withOpacity(0.5),
                 ),
               ),
-              onSubmitted: (data) {
+              onSubmitted: (data) async {
                 cityName = data;
-                ApiService.service.fetchData(cityName!);
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ResultPage(cityName: cityName)));
+                WeatherResponse weatherData =
+                    await ApiService.service.fetchData(cityName!);
+                Navigator.pop(context, weatherData);
               },
             ),
           ),
