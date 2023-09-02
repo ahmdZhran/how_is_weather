@@ -28,8 +28,8 @@ class _HomeState extends State<Home> {
       floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.white,
           shape: const CircleBorder(),
-          onPressed: () {
-            Navigator.push(
+          onPressed: () async {
+            final selectedCity = await Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) {
@@ -39,6 +39,11 @@ class _HomeState extends State<Home> {
                 },
               ),
             );
+            if (selectedCity != null) {
+              setState(() {
+                cityName = selectedCity; // Update the cityName variable
+              });
+            }
           },
           child: const Icon(
             Icons.search,
@@ -99,6 +104,7 @@ class _HomeState extends State<Home> {
                       : null,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
+                      print('${cityName}this is ciyName of home screen');
                       WeatherResponse weatherData = snapshot.data!;
                       return Column(
                         children: [
