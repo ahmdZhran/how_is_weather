@@ -61,7 +61,7 @@ class SearchPage extends StatelessWidget {
               ),
               onSubmitted: (data) async {
                 cityName = data;
-                print(cityName);
+
                 WeatherResponse weather =
                     await ApiService.service.fetchData(cityName: cityName!);
                 weatherData = weather;
