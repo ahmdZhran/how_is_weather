@@ -41,7 +41,7 @@ class _HomeState extends State<Home> {
             );
             if (selectedCity != null) {
               setState(() {
-                cityName = selectedCity; // Update the cityName variable
+                cityName = selectedCity;
               });
             }
           },
