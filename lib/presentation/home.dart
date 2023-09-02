@@ -104,7 +104,6 @@ class _HomeState extends State<Home> {
                       : null,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
-                      print('${cityName}this is ciyName of home screen');
                       WeatherResponse weatherData = snapshot.data!;
                       return Column(
                         children: [
