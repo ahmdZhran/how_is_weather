@@ -3,7 +3,7 @@ import 'package:how_is_weather/Cubit/weather_state.dart';
 import 'package:how_is_weather/data/remote.dart';
 
 class WeatherCubit extends Cubit<WeatherStates> {
-  WeatherCubit(this.apiService) : super(WeatherLoading());
+  WeatherCubit(this.apiService) : super(WeatherInitial());
   ApiService apiService;
   void fetchWeather({required String cityName}) {
     emit(WeatherLoading());
