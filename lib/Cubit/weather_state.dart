@@ -1,6 +1,6 @@
 abstract class WeatherStates {}
 
-class LoadingData extends WeatherStates {}
+class WeatherLoading extends WeatherStates {}
 
 class LoadingSuccess extends WeatherStates {}
 
