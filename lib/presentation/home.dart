@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:how_is_weather/Cubit/weather_state.dart';
 import 'package:how_is_weather/models/weather_response.dart';
 
 import 'package:how_is_weather/presentation/search_page.dart';
@@ -35,7 +36,15 @@ class Home extends StatelessWidget {
               color: Colors.black,
             )),
         body: BlocBuilder(
-          builder: (context, state) {},
+          builder: (context, state) {
+            if (state is WeatherLoading) {
+              return const Center(
+                child: CircularProgressIndicator(
+                  color: Colors.white,
+                ),
+              );
+            }
+          },
         )
         // weatherData == null
         //     ? Stack(
