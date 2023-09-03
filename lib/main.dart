@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'presentation/home.dart';
 
 void main() {
-  runApp(WeatherApp());
+  runApp(BlocProvider(
+    create: (context) {},
+    child: WeatherApp(),
+  ));
 }
 
 class WeatherApp extends StatelessWidget {
