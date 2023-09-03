@@ -5,7 +5,9 @@ import 'presentation/home.dart';
 
 void main() {
   runApp(BlocProvider<WeatherCubit>(
-    create: (context) {},
+    create: (context) {
+      return WeatherCubit();
+    },
     child: WeatherApp(),
   ));
 }
