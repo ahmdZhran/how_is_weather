@@ -43,6 +43,8 @@ class Home extends StatelessWidget {
                 ),
               );
             } else if (state is LoadingSuccess) {
+              weatherData =
+                  BlocProvider.of<WeatherCubit>(context).weatherResponse;
               return Stack(
                 children: [
                   Image.asset(
