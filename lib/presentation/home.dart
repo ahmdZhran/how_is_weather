@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:how_is_weather/Cubit/weather_cubit.dart';
 import 'package:how_is_weather/Cubit/weather_state.dart';
-import 'package:how_is_weather/models/weather_response.dart';
 
 import 'package:how_is_weather/presentation/search_page.dart';
 
-import '../data/remote.dart';
 import '../widgets/custome_text.dart';
 
 class Home extends StatelessWidget {
@@ -36,7 +34,7 @@ class Home extends StatelessWidget {
               Icons.search,
               color: Colors.black,
             )),
-        body: BlocBuilder<WeatherCubit,WeatherStates>(
+        body: BlocBuilder<WeatherCubit, WeatherStates>(
           builder: (context, state) {
             if (state is WeatherLoading) {
               return const Center(
@@ -89,8 +87,8 @@ class Home extends StatelessWidget {
               );
             } else if (state is LoadingFailor) {
               return Center(child: Text("Can't get on data please try again"));
-            }else{
-             return Stack(
+            } else {
+              return Stack(
                 children: [
                   Image.asset(
                     'assets/stars_in_sky.jfif',
@@ -103,8 +101,8 @@ class Home extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
-                          padding:
-                              const EdgeInsets.only(left: 15, top: 15, right: 1),
+                          padding: const EdgeInsets.only(
+                              left: 15, top: 15, right: 1),
                           child: AnimatedTextKit(
                             animatedTexts: [
                               TypewriterAnimatedText('Know how is the weather',
@@ -129,7 +127,7 @@ class Home extends StatelessWidget {
                     ),
                   )
                 ],
-              )
+              );
             }
           },
         )

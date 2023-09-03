@@ -5,7 +5,7 @@ import 'package:how_is_weather/data/remote.dart';
 class WeatherCubit extends Cubit<WeatherStates> {
   WeatherCubit(this.apiService) : super(WeatherInitial());
   ApiService apiService;
-  void fetchWeather({required String cityName}) {
+  void fetchWeather({required String cityName}) async {
     emit(WeatherLoading());
     try {
       apiService.fetchData(cityName: cityName);
