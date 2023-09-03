@@ -43,6 +43,53 @@ class Home extends StatelessWidget {
                   color: Colors.white,
                 ),
               );
+            } else if (state is LoadingSuccess) {
+              return Stack(
+                children: [
+                  Image.asset(
+                    'assets/stars_in_sky.jfif',
+                    fit: BoxFit.cover,
+                    width: double.infinity,
+                    height: double.infinity,
+                  ),
+                  Column(
+                    children: [
+                      CustomText(
+                        text: '${weatherData?.location?.name ?? 'Unknown'}C°',
+                        fontSize: 70,
+                        color: Colors.white,
+                      ),
+                      CustomText(
+                        text:
+                            '${weatherData?.current!.tempC?.toStringAsFixed(0)}C°',
+                        fontSize: 70,
+                        color: Colors.white,
+                      ),
+                      CustomText(
+                        text:
+                            '${weatherData?.current!.condition!.text.toString()}C°',
+                        fontSize: 70,
+                        color: Colors.white,
+                      ),
+                      CustomText(
+                        text: 'H:${weatherData?.current!.humidity.toString()}°',
+                        fontSize: 70,
+                        color: Colors.white,
+                      ),
+                      CustomText(
+                        text:
+                            'L:${weatherData?.location!.lat?.toStringAsFixed(0)}°',
+                        fontSize: 70,
+                        color: Colors.white,
+                      ),
+                    ],
+                  )
+                ],
+              );
+            } else if (state is LoadingFailor) {
+              return Center(child: Text("Can't get on data please try again"));
+            }else{
+              ret
             }
           },
         )
