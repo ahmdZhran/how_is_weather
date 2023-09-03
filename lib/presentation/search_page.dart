@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:how_is_weather/Cubit/weather_cubit.dart';
 import 'package:how_is_weather/data/remote.dart';
 import 'package:how_is_weather/models/weather_response.dart';
 
@@ -61,11 +63,8 @@ class SearchPage extends StatelessWidget {
               ),
               onSubmitted: (data) async {
                 cityName = data;
-
-                WeatherResponse weather =
-                    await ApiService.service.fetchData(cityName: cityName!);
-                weatherData = weather;
-                updateUI!();
+                BlocProvider.of<WeatherCubit>(context)
+                    .fetchWeather(cityName: cityName!);
                 Navigator.pop(context, cityName);
               },
             ),
