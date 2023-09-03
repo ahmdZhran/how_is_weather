@@ -52,6 +52,7 @@ class Home extends StatelessWidget {
                     height: double.infinity,
                   ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       CustomText(
                         text: '${weatherData?.location?.name ?? 'Unknown'}C°',

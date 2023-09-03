@@ -9,9 +9,6 @@ import '../utls/constants.dart';
 class SearchPage extends StatelessWidget {
   String? cityName;
 
-  VoidCallback? updateUI;
-  SearchPage({this.updateUI});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
