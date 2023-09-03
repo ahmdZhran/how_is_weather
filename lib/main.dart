@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'presentation/home.dart';
 
 void main() {
-  runApp(const WeatherApp());
+  runApp(WeatherApp());
 }
 
 class WeatherApp extends StatelessWidget {
