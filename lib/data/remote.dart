@@ -7,6 +7,7 @@ import '../utls/constants.dart';
 
 class ApiService {
   ApiService._instance();
+  ApiService.namedConstructor();
   static final ApiService service = ApiService._instance();
   Future<WeatherResponse> fetchData({required String cityName}) async {
     String url =

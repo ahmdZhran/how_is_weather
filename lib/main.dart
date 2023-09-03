@@ -7,7 +7,7 @@ import 'presentation/home.dart';
 void main() {
   runApp(BlocProvider(
     create: (context) {
-      return WeatherCubit(ApiService());
+      return WeatherCubit(ApiService.namedConstructor());
     },
     child: WeatherApp(),
   ));
