@@ -37,10 +37,20 @@ class Home extends StatelessWidget {
         body: BlocBuilder<WeatherCubit, WeatherStates>(
           builder: (context, state) {
             if (state is WeatherLoading) {
-              return const Center(
-                child: CircularProgressIndicator(
-                  color: Colors.white,
-                ),
+              return Stack(
+                children: [
+                  Image.asset(
+                    'assets/stars_in_sky.jfif',
+                    fit: BoxFit.cover,
+                    width: double.infinity,
+                    height: double.infinity,
+                  ),
+                  Center(
+                    child: CircularProgressIndicator(
+                      color: Colors.white,
+                    ),
+                  )
+                ],
               );
             } else if (state is LoadingSuccess) {
               weatherData =
@@ -53,38 +63,50 @@ class Home extends StatelessWidget {
                     width: double.infinity,
                     height: double.infinity,
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      CustomText(
-                        text: '${weatherData?.location?.name ?? 'Unknown'}C°',
-                        fontSize: 70,
-                        color: Colors.white,
+                  SafeArea(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 60),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          CustomText(
+                            text: '${weatherData?.location?.name ?? 'Unknown'}',
+                            fontSize: 40,
+                            color: Colors.white,
+                          ),
+                          CustomText(
+                            text:
+                                '${weatherData?.current!.tempC?.toStringAsFixed(0)}C°',
+                            fontSize: 70,
+                            color: Colors.white,
+                          ),
+                          CustomText(
+                            text:
+                                '${weatherData?.current!.condition!.text.toString()}',
+                            fontSize: 20,
+                            color: Colors.white.withOpacity(0.8),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CustomText(
+                                text:
+                                    'H:${weatherData?.current!.humidity.toString()}°',
+                                fontSize: 20,
+                                color: Colors.white,
+                              ),
+                              SizedBox(width: 10),
+                              CustomText(
+                                text:
+                                    'L:${weatherData?.location!.lat?.toStringAsFixed(0)}°',
+                                fontSize: 20,
+                                color: Colors.white,
+                              ),
+                            ],
+                          )
+                        ],
                       ),
-                      CustomText(
-                        text:
-                            '${weatherData?.current!.tempC?.toStringAsFixed(0)}C°',
-                        fontSize: 70,
-                        color: Colors.white,
-                      ),
-                      CustomText(
-                        text:
-                            '${weatherData?.current!.condition!.text.toString()}C°',
-                        fontSize: 70,
-                        color: Colors.white,
-                      ),
-                      CustomText(
-                        text: 'H:${weatherData?.current!.humidity.toString()}°',
-                        fontSize: 70,
-                        color: Colors.white,
-                      ),
-                      CustomText(
-                        text:
-                            'L:${weatherData?.location!.lat?.toStringAsFixed(0)}°',
-                        fontSize: 70,
-                        color: Colors.white,
-                      ),
-                    ],
+                    ),
                   )
                 ],
               );
