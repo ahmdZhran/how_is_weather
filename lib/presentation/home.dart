@@ -7,18 +7,8 @@ import 'package:how_is_weather/presentation/search_page.dart';
 import '../data/remote.dart';
 import '../widgets/custome_text.dart';
 
-class Home extends StatefulWidget {
+class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
-
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  String? cityName;
-  void updateUI() {
-    setState(() {});
-  }
 
   @override
   Widget build(BuildContext context) {
