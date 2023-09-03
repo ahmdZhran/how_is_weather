@@ -11,7 +11,7 @@ class WeatherCubit extends Cubit<WeatherStates> {
       apiService.fetchData(cityName: cityName);
       emit(LoadingSuccess());
     } on Exception catch (e) {
-      // TODO
+      emit(LoadingFailor());
     }
   }
 }
