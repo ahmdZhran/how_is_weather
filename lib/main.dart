@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:how_is_weather/Cubit/weather_cubit.dart';
 import 'presentation/home.dart';
 
 void main() {
-  runApp(BlocProvider(
+  runApp(BlocProvider<WeatherCubit>(
     create: (context) {},
     child: WeatherApp(),
   ));
