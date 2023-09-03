@@ -7,6 +7,7 @@ class WeatherCubit extends Cubit<WeatherStates> {
   WeatherCubit(super.initialState, this.apiService);
   ApiService apiService;
   void fetchWeather({required String cityName}) {
+    emit(WeatherLoading());
     try {
       apiService.fetchData(cityName: cityName);
     } on Exception catch (e) {
